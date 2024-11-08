@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Job Application Portal</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+  }
+  header {
+    background-color: #0d0064;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+  }
+
+  .container {
+    width: 80%;
+    margin: auto;
+    overflow: hidden;
+  }
+
+  .job-card {
+    background: #fff;
+    padding: 20px;
+    margin: 20px 0;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+
+  .job-title {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+
+  .job-description {
+    font-size: 16px;
+    color: #666;
+    margin-bottom: 10px;
+  }
+
+  .job-button {
+    display: inline-block;
+    padding: 8px 16px;
+    background-color: #0d0064;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+  }
+
+  .job-button:hover {
+    background-color: #555;
+  }
+</style>
+</head>
+<body>
+  <header>
+    <h1>Job Application Portal</h1>
+    <p>Find your dream job today!</p>
+  </header>
+
+  <!-- Add this button within the form-action-buttons div -->
+  <button type="button" id="toggleButton"><a href="add_course.html">Add Course</a></button>
+  <p align='right'><div>
+    <a href="login.html">Log out</a>
+  </div></p>
+  <div class="container">
+    <div class="job-card" data-id="0">
+      <h2 class="job-title">Software Engineer</h2>
+      <p class="job-description">Join our team of skilled software engineers and contribute to cutting-edge projects.</p>
+      <a href="registration.html" class="job-button">Apply Now</a>
+      <button class="delete-button">Delete</button>
+    </div>
+    <div class="job-card" data-id="1">
+      <h2 class="job-title">Graphic Designer</h2>
+      <p class="job-description">Use your creativity to design stunning visuals for our clients and marketing campaigns.</p>
+      <a href="registration.html" class="job-button">Apply Now</a>
+      <button class="delete-button">Delete</button>
+    </div>
+    <div class="job-card" data-id="2">
+      <h2 class="job-title">Data Analyst</h2>
+      <p class="job-description">Uncover valuable insights from complex datasets to drive informed business decisions and strategies.</p>
+      <a href="registration.html" class="job-button">Apply Now</a>
+      <button class="delete-button">Delete</button>
+    </div>
+  </div>
+  <script src="display_course.js"></script>
+  <script src="delete_job.js"></script>
+  
+</body>
+</html>

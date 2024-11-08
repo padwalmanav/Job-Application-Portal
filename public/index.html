@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SignUp</title>
+
+    <link rel="stylesheet" href="login_signup.css"> <!-- Update CSS file name here -->
+    
+    <script>
+        function validatePhoneNumber() {
+            var phnoInput = document.getElementById('phno');
+            var phnoPattern = /^\d{10}$/; // 10 digits
+
+            if (!phnoPattern.test(phnoInput.value)) {
+                alert('Invalid mobile number. Please enter a 10-digit mobile number.');
+                return false;
+            }
+            return true;
+        }
+    </script>
+</head>
+
+<body>
+            <div class="container">
+                <h1 style="color: #007bff;">Job Application</h1>
+                <form class="login-form" action="/signup" method="POST" onsubmit="return validatePhoneNumber()">
+                    <!-- <h1 color: black;>Job Application</h1> -->
+                    <h1><u style="color:black;">SignUp</u></h1>
+                    <input type="text" class="box" id="name" name="name" placeholder="Name" required />
+                    <br>
+                    <input type="text" class="box" id="email" name="email" placeholder="Email" required />
+                    <br>
+                    <input type="text" class="box" id="phno" name="phno" placeholder="Mobile" required />
+                    <br>
+                    <input type="password" class="box" id="password" name="password" placeholder="Password" required />
+                    <br>
+                    <input type="submit" value="Submit" id="submit" class="btn btn-primary" />
+                    <p><u style="color: black;">Already have an account? </u><a href="login.html" style="color: #007bff">Sign In</a></p>
+                </form>
+            </div>
+
+</body>
+
+</html>
