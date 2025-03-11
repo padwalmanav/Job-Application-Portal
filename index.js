@@ -20,6 +20,8 @@ db.once('open', () => console.log("Connected to Database"));
 // Define a route to serve the signup form
 app.get("/signup", (req, res) => {
     res.sendFile(__dirname + "/signup.html");
+    console.log(__dirname)
+    console.log(__filename)
 });
 
 // Define a route to handle the signup form submission
@@ -98,6 +100,6 @@ app.post("/login", async (req, res) => {
 
 
 
-app.listen(3000, () => {
+app.listen(3001, () => {
     console.log("Listening on PORT 3000");
 });
