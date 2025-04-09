@@ -64,8 +64,7 @@ app.route("/login")
         res.sendFile(__dirname + "/public/login.html")
     })
     .post(async (req, res) => {
-        const email = req.body.email;
-        const password = req.body.password;
+        const {email,password} = req.body
     
         try {
             const user = await db.collection('users').findOne({ email: email, password: password });
