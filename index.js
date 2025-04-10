@@ -1,10 +1,13 @@
 import express from 'express'
 import dotenv from 'dotenv'
+import mongoose from 'mongoose'
 
+mongoose.connect('mongodb://localhost:27017/mydb')
 dotenv.config()
 
 const port = process.env.PORT
 const app = express();
+const db = mongoose.connection
 
 app.use(express.json());
 app.use(express.static('public'));
@@ -39,25 +42,6 @@ app.route("/signup")
     
         return res.redirect('/signup_success.html');
     })
-
-// app.post("/login", async (req, res) => {
-//     const email = req.body.email;
-//     const password = req.body.password;
-
-//     try {
-//         const user = await db.collection('users').findOne({ email: email, password: password });
-
-//         if (!user) {
-//            alert('Invalid Credentials.');
-//            return false;
-//         }
-
-//         return res.redirect('home_page.html');
-//     } catch (error) {
-//         console.error(error);
-//         return res.status(500).send("An error occurred while processing your request.");
-//     }
-// });
 
 app.route("/login")
     .get((req,res)=>{
